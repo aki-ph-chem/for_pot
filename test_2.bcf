@@ -1,0 +1,6 @@
+!  batch_test
+! Start=1
+
+t1.gjf,o1.o
+t2.gjf,o2.o
+t3.gjf,o3.o
