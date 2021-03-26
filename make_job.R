@@ -29,6 +29,55 @@ write.table(xy,"C:/Users/simiz/Desktop/b_test/test_3.bcf",col.names = F,row.name
 
 #########################################
 
-file_name_0 = ""
+library(stringr)
+library(dplyr)
+
+
+file_name_0 = "t.gjf"  
+
+Num_of_jobs = 10         
+
+Num_vec = 1:Num_of_jobs
+
+
+
+file_name_1 = stringr::str_split(file_name_0,pattern = ".gjf")
+
+file_name_base = file_name_1[[1]][1] 
+
+
+
+file_name_2 = stringr::str_c(file_name_base,Num_vec,sep = "_")
+
+
+
+input_file = stringr::str_c(file_name_2,".gjf,")
+
+out_put_file = stringr::str_c(file_name_2,".o")
+
+
+
+batch = cbind(input_file,out_put_file)
+
+PATH = "C:/Users/simiz/Desktop/b_test/batch.bcf"
+
+write.table(batch,PATH,col.names = F,row.names = F,quote = F)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
